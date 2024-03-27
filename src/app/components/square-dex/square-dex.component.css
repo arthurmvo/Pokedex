@@ -1,0 +1,34 @@
+@font-face {
+    font-family: 'Pokemon';
+    src: url('../../../assets/PokemonGB.ttf');
+}
+
+.square {
+    width: 150px;
+    height: 150px;
+    background-color: #ffffffb9;
+    border: 1px solid black;
+    border-radius: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+.name {
+    font-size: 0.8em;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Pokemon';
+    margin-bottom: 30px;
+}
+
+.sprite {
+    width: 100px;
+    height: 100px;
+    margin-top: -20px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
