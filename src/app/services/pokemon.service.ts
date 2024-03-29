@@ -11,6 +11,7 @@ import { Response } from '../Response';
 export class PokemonService {
   private baseAPI = environment.apiUrl;
   private apiUrl = `${this.baseAPI}pokemon`;
+  private descriptionUrl = `${this.baseAPI}pokemon-species`;
 
   constructor(private http: HttpClient) {}
 
@@ -20,7 +21,12 @@ export class PokemonService {
     );
   }
 
-  getDetails(url: string): Observable<any> {
-    return this.http.get<any>(url);
+  getDetails(id: string): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${id}`);
+  }
+
+  getDescription(id: number): Observable<any> {
+    return this.http.get<any>(`${this.descriptionUrl}/${id}`);
+    // return this.description(this.http.get<any>(`${this.descriptionUrl}/${id}`));
   }
 }

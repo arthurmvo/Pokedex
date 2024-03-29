@@ -1,0 +1,21 @@
+/* Apply CSS to the entire SVG */
+
+  
+/* Apply CSS to the path element inside the SVG */
+.star-svg path {
+    fill: none;
+    stroke: rgb(180, 180, 0);
+    stroke-width: 2px;
+    stroke-linejoin: round;
+}
+
+.star-svg path.filled, .star-svg path.unfilled:hover {
+    fill: yellow;
+}
+
+.star-svg path.unfilled, .star-svg path.filled:hover {
+    fill: none;
+}
+
+
+  

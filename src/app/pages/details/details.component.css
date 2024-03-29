@@ -1,0 +1,150 @@
+.fix {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.back-button {
+    position: absolute;
+    left: 0;
+    z-index: 100;
+    background: none;
+    border: none;
+    cursor: pointer;
+    stroke: gray;
+}
+
+.back-button:hover {
+    stroke: black;
+    transition: .4s;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    top: 0;
+    height: 25vh;
+    width: 100%;
+    background-color: blue;
+}
+
+.sprite {
+transform: scale(2.5);
+}
+
+@font-face {
+    font-family: 'Pokemon';
+    src: url('../../../assets/PokemonGB.ttf');
+}
+
+.name {
+    font-size: 2em;
+    font-family: 'Nunito', sans-serif;
+    text-transform: capitalize;
+    margin-bottom: 1vh;
+    margin-top: 0;
+}
+
+.title {
+    font-family: 'Nunito', sans-serif;
+    text-transform: capitalize;
+}
+
+.description {
+    font-family: 'Nunito', sans-serif;
+    margin-bottom: 1vh;
+}
+
+
+.types {
+display: flex;
+gap: 10px;
+}
+
+.type {
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 20%;
+    font-size: 0.7em;
+    font-family: 'Nunito', sans-serif;
+    text-transform: capitalize;
+}
+
+.table {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.rectangle {
+    background-color: #ffffff98;
+    border-radius: 30px;
+    padding: 30px;
+    left: 0;
+}
+
+.rectangle h2 {
+    font-family: 'Nunito', sans-serif;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.rectangle .stats {
+    padding: 0;
+}
+
+.rectangle .stat {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    justify-content: space-between;
+    gap: 10px;
+    border-radius: 10px;
+    padding: 8px;
+}
+
+.rectangle .stat:hover {
+    background-color: #f0f0f0;
+}
+
+.rectangle .stat h3 {
+    text-align: left;
+    font-weight: 500;
+    color: #696969;
+    margin: 0;
+}
+
+.rectangle .progress {
+    display: grid;
+    grid-template-columns: 5ch minmax(100px, 1fr);
+    justify-content: end;
+    align-items: center;
+}
+
+.rectangle .progress progress {
+    width: 110px;
+}
+
+.rectangle .progress span {
+    white-space: nowrap;
+    font-weight: 600;
+    width: 5ch;
+}
+
+.rectangle progress[value]::-webkit-progress-bar {
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.rectangle progress[value]::-webkit-progress-value {
+    border: 3px solid #f0f0f0;
+    border-radius: 20px;
+}
+
+.rectangle progress span {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+

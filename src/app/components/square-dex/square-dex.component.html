@@ -1,8 +1,11 @@
 <div class="square">
-    <h3 class="name">{{pokemon.name | titlecase}}</h3>
-    <img src="{{pokemon.sprite}}" alt="" class="sprite">
-
-    <!-- <h3 class="name">Nome</h3> -->
-    <!-- <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" -->
-    <!-- alt="" class="sprite"> -->
+    <div class="center">
+        <div class="item" (click)=goToDetails()>
+            <h3 class="name">{{pokemon.name | titlecase}}</h3>
+            <img src="{{pokemon.sprite}}" alt="" class="sprite">
+        </div>
+    </div>
+    <div class="star" [ngStyle]="{'width': '4vh', 'height': '4vh'}">
+        <app-star [id]="pokemon.id"></app-star>
+    </div>
 </div>

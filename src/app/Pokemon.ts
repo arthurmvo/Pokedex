@@ -3,4 +3,8 @@ export interface Pokemon {
   name: string;
   sprite: string;
   url: string;
+  types?: string[];
+  weight?: number;
+  height?: number;
+  stats?: { name: string; value: number }[];
 }

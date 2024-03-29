@@ -1,4 +1,4 @@
 <!-- <p *ngFor="let pokemon of pokemons">{{pokemon.name}}</p> -->
-<div class="container-list">
+<div class="container-list" #containerList>
     <app-square-dex *ngFor="let pokemon of pokemons" [pokemon]="pokemon"></app-square-dex>
 </div>

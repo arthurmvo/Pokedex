@@ -1,6 +1,13 @@
-import { Component } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  OnInit,
+  EventEmitter,
+  Output,
+  Renderer2,
+} from '@angular/core';
 import { HomeListComponent } from '../../components/home-list/home-list.component';
-import { off } from 'process';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -10,8 +17,35 @@ import { off } from 'process';
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
-  offset = 0;
-  limit = 20;
+  @Output() next = new EventEmitter<void>();
+  @Output() previous = new EventEmitter<void>();
+  @Output() plus = new EventEmitter<void>();
+  @Output() minus = new EventEmitter<void>();
 
-  // Criar o incremento de offset e de limit conforme requisiçao
+  constructor(private router: Router) {}
+
+  fplus() {
+    this.plus.emit();
+  }
+
+  fminus() {
+    this.minus.emit();
+  }
+
+  fnext() {
+    this.next.emit();
+  }
+
+  fprevious() {
+    this.previous.emit();
+  }
+
+  home() {
+    this.router.navigate(['/']);
+  }
+
+  favorite() {
+    console.log('clicks');
+    this.router.navigate(['/favorites']);
+  }
 }
