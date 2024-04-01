@@ -28,8 +28,8 @@ export class StarComponent {
 
   ngOnInit() {
     this.updateRender();
-    console.log('---');
     this.favoriteService.eventObservable.subscribe(() => {
+      console.log('pegou o evento');
       this.updateRender();
     });
   }
@@ -46,7 +46,6 @@ export class StarComponent {
   }
 
   updateRender() {
-    console.log('entrou');
     this.isFilled = this.favoriteService.isFavorite(this.id);
   }
 

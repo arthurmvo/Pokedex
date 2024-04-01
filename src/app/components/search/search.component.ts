@@ -51,7 +51,7 @@ export class SearchComponent {
 
   clearLocalStorage() {
     if (typeof localStorage !== 'undefined') {
-      localStorage.clear();
+      localStorage.removeItem('favorites');
       this.favoriteService.reset();
     } else {
       console.log('localStorage is not available');

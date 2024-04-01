@@ -1,7 +1,7 @@
 <div class="all">
     <div class="fix">
         <div class="container">
-            <ng-container *ngTemplateOutlet="empty ? emptyTemplate : list"></ng-container>
+            <ng-container *ngTemplateOutlet="pokemons.length === 0 ? emptyTemplate : list"></ng-container>
             <ng-template #list>
                 <div class="container-list" #containerList>
                     <app-square-dex (unfavorited)="unfavoritePokemon($event)" *ngFor="let pokemon of pokemons"

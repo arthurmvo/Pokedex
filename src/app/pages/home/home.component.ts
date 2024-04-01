@@ -39,7 +39,7 @@ export class HomeComponent {
   clearLocalStorage() {
     this.refresh.emit();
     if (typeof localStorage !== 'undefined') {
-      localStorage.clear();
+      localStorage.removeItem('favorites');
     } else {
       console.log('localStorage is not available');
     }

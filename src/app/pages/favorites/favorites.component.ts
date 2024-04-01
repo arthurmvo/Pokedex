@@ -15,7 +15,6 @@ import { Router } from '@angular/router';
 export class FavoritesComponent {
   mostrarAjuda = false;
   pokemons: Pokemon[] = [];
-  empty!: boolean;
   aux_pokemons: Pokemon[] = [];
   return: any;
 
@@ -43,7 +42,6 @@ export class FavoritesComponent {
   ngOnInit() {
     this.loadFavorites();
     this.pokemons = this.aux_pokemons;
-    this.empty = this.pokemons.length === 0 ? true : false;
   }
 
   unfavoritePokemon(id: number) {
@@ -61,10 +59,9 @@ export class FavoritesComponent {
 
   clearLocalStorage() {
     if (typeof localStorage !== 'undefined') {
-      localStorage.clear();
+      localStorage.removeItem('favorites');
       this.loadFavorites();
       this.pokemons = this.aux_pokemons;
-      this.empty = true;
     } else {
       console.log('localStorage is not available');
     }

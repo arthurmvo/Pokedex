@@ -34,7 +34,7 @@ export class FavoriteService {
 
   isFavorite(id: number): boolean {
     let favorites = this.getFavorites();
-    return favorites.some((favorite: any) => favorite.id === id);
+    return favorites.some((favorite: any) => favorite.id == id);
   }
 
   reset() {

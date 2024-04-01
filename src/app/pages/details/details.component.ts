@@ -40,6 +40,7 @@ export class DetailsComponent {
 
   ngOnInit(): void {
     this.loadPokemons();
+    this.favoriteService.reset();
   }
 
   help() {
@@ -146,7 +147,7 @@ export class DetailsComponent {
 
   clearLocalStorage() {
     if (typeof localStorage !== 'undefined') {
-      localStorage.clear();
+      localStorage.removeItem('favorites');
       this.favoriteService.reset();
       console.log('emited');
     } else {
