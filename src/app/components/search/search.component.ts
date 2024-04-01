@@ -14,6 +14,7 @@ import { FavoriteService } from '../../services/favorite.service';
   styleUrl: './search.component.css',
 })
 export class SearchComponent {
+  mostrarAjuda = false;
   allPokemons: Pokemon[] = [];
   pokemons: Pokemon[] = [];
   searchTerm: string = '';
@@ -26,6 +27,10 @@ export class SearchComponent {
 
   ngOnInit(): void {
     this.loadPokemons();
+  }
+
+  help() {
+    this.mostrarAjuda = true;
   }
 
   search(e: Event) {

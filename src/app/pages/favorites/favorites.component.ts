@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
   styleUrl: './favorites.component.css',
 })
 export class FavoritesComponent {
+  mostrarAjuda = false;
   pokemons: Pokemon[] = [];
   empty!: boolean;
   aux_pokemons: Pokemon[] = [];
@@ -71,5 +72,8 @@ export class FavoritesComponent {
 
   search() {
     this.router.navigate(['/search']);
+  }
+  help() {
+    this.mostrarAjuda = true;
   }
 }

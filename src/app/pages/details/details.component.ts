@@ -22,6 +22,7 @@ import { FavoriteService } from '../../services/favorite.service';
   styleUrl: './details.component.css',
 })
 export class DetailsComponent {
+  mostrarAjuda = false;
   @ViewChild('Audio') audio!: ElementRef;
   @Output() reset = new EventEmitter<void>();
   pokemon!: Pokemon;
@@ -39,6 +40,10 @@ export class DetailsComponent {
 
   ngOnInit(): void {
     this.loadPokemons();
+  }
+
+  help() {
+    this.mostrarAjuda = true;
   }
 
   loadPokemons() {

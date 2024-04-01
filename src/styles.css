@@ -35,7 +35,7 @@ width: 50vw;
     height: 80.5vh;
     width: 47.4vw;
     overflow-y: auto;
-    scrollbar-width: none;
+    /* scrollbar-width: none; */
     -ms-overflow-style: none;
     z-index: 10;
     background-image: url('./assets/pokeball-gray.svg');
@@ -46,8 +46,15 @@ width: 50vw;
 }
 
 .fix::-webkit-scrollbar {
-    display: none; /* For Chrome, Safari and Opera */
-  }
+    width: 8px;
+    background-color: rgba(215, 215, 215, 0.7);
+    border-radius: 5px;
+}
+
+.fix::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 5px;
+}
 
 .container {
     position: relative;
