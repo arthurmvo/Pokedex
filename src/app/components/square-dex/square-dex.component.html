@@ -6,6 +6,6 @@
         </div>
     </div>
     <div class="star" [ngStyle]="{'width': '4vh', 'height': '4vh'}">
-        <app-star [id]="pokemon.id"></app-star>
+        <app-star [id]="pokemon.id" [name]="pokemon.name" (unfavorited)="unfavoritePokemon()"></app-star>
     </div>
 </div>

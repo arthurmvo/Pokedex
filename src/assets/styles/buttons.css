@@ -1,0 +1,67 @@
+.btn {
+    position: fixed;
+    z-index: 10;
+    height: auto;
+    width: 5vh;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+.next {
+    left: 70%;
+    bottom: 8%;
+}
+
+.back {
+    left: 65%;
+    bottom: 8%;
+}
+
+.add {
+    left: 60%;
+    bottom: 8%;
+}
+
+.remove {
+    left: 56%;
+    bottom: 8%;
+}
+
+.home {
+    left: 33%;
+    bottom: 3%;
+    transform: scale(0.8);
+}
+
+.fav {
+    left: 30.4%;
+    bottom: 3%;
+    transform: scale(0.8);
+}
+
+.reset {
+    right: 26vw;
+    bottom: 1.5vh;
+    position: absolute;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.search-icon {
+    left: 27vw;
+    bottom: 4.7vh;
+    position: absolute;
+    cursor: pointer;
+    z-index: 1000;
+    scale: 2.2;
+}
+
+.helpB{
+    right: 30vw;
+    bottom: 1.5vh;
+    position: absolute;
+    cursor: pointer;
+    z-index: 1000;
+}

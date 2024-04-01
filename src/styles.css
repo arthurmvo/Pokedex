@@ -1,4 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('./assets/styles/colors.css');
+@import url('./assets/styles/buttons.css');
+
 .all {
     display: flex;
     justify-content: center;
@@ -7,23 +10,39 @@
 }
 
 
+.dex {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+position: relative;
+top: 0;
+height: 100vh;
+width: 50vw;
+}
+
+
+
 .fixed {
     position: fixed;
     top: 0;
     height: 100vh;
     width: 50vw;
-    z-index: 1;
 } 
 
 .fix { 
     top: 3.3vh;
     position: absolute;
     height: 80.5vh;
-    width: 47vw;
+    width: 47.4vw;
     overflow-y: auto;
     scrollbar-width: none;
     -ms-overflow-style: none;
     z-index: 10;
+    background-image: url('./assets/pokeball-gray.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    /* background-color: #c9e1f285; */
 }
 
 .fix::-webkit-scrollbar {
@@ -38,7 +57,6 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     grid-gap: 10px;
-    background-color: blue;
     /* width: 62vw; */
     height: auto;
     align-items: start;
@@ -51,7 +69,7 @@
     display: block;
     width: 24vw;
     height: auto;
-    background-color: green;
+    /* background-color: green; */
     overflow-y: auto;
 }
 
@@ -61,138 +79,6 @@
     margin-left: 1vw;
 }
 
-.btn {
-    position: fixed;
-    z-index: 10;
-    height: auto;
-    width: 5vh;
-}
 
-.btn:hover {
-    cursor: pointer;
-}
-
-.next {
-    left: 70%;
-    bottom: 8%;
-}
-
-.back {
-    left: 65%;
-    bottom: 8%;
-}
-
-.add {
-    left: 60%;
-    bottom: 8%;
-}
-
-.remove {
-    left: 56%;
-    bottom: 8%;
-}
-
-.home {
-    left: 33%;
-    bottom: 3%;
-    transform: scale(0.8);
-}
-
-.fav {
-    left: 30.4%;
-    bottom: 3%;
-    transform: scale(0.8);
-}
-
-
-.normal {
-    background-color: #c89e6b;
-    color: #503a1f;
-}
-
-.grass {
-    background-color: #92d1b4;
-    color: #1a4e42;
-}
-
-.fire {
-    background-color: #fd7a7a;
-    color: #531818;
-}
-
-.water {
-    background-color: #75bdfd;
-    color: #2e485f;
-}
-
-.electric {
-    background-color: #f5e585;
-    color: #524a1c;
-}
-
-.ice {
-    background-color: #98d5d7;
-    color: #20494b;
-}
-
-.ground {
-    background-color: #e7d060;
-    color: #463d14;
-}
-
-.flying {
-    background-color: #a98ff0;
-    color: #261a49;
-}
-
-.poison {
-    background-color: #ad7fae;
-    color: #3e103f;
-}
-
-.fighting {
-    background-color: #cf423a;
-    color: #3d0c0a;
-}
-
-.psychic {
-    background-color: #f65687;
-    color: #6d263b;
-}
-
-.dark {
-    background-color: #382d26;
-    color: #b38f79;
-}
-
-.rock {
-    background-color: #b5b8a7;
-    color: #474b35;
-}
-
-.bug {
-    background-color: #99c98b;
-    color: #28461f;
-}
-
-.ghost {
-    background-color: #6e5896;
-    color: #b9a5df;
-}
-
-.steel {
-    background-color: #b9b7cf;
-    color: #34264d;
-}
-
-.dragon {
-    background-color: #8b5dff;
-    color: #250163;
-}
-
-.fairy {
-    background-color: #f8cfd5;
-    color: #664147;
-}
 
 

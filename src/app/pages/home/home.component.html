@@ -1,15 +1,23 @@
+<app-help class="help" (close)="close()" *ngIf="mostrarAjuda"></app-help>
 <div class="all">
     <div class="fix" #container>
         <div class="container">
-            <app-home-list [next]="next" [previous]="previous" [plus]="plus" [minus]="minus"></app-home-list>
+            <app-home-list [next]="next" [previous]="previous" [plus]="plus" [minus]="minus"
+                [refresh]="refresh"></app-home-list>
         </div>
     </div>
-    <img src="../../../assets/pokedex2.png" class="fixed">
+    <div class="dex">
+        <img src="../../../assets/pokedex2.png" class="fixed">
+    </div>
 </div>
 
-<img src="../../../assets/avancar.png" alt="" class="btn next" (click)="fnext()">
-<img src="../../../assets/voltar.png" alt="" class="btn back" (click)="fprevious()">
-<img src="../../../assets/mais.png" alt="" class="btn add" (click)="fplus()">
-<img src="../../../assets/menos.png" alt="" class="btn remove" (click)="fminus()">
+
+<img src="../../../assets/help.png" class="btn helpB" (click)="help()">
+<img src="../../../assets/search2.png" class="btn search-icon" (click)="search()">
+<img src="../../../assets/reset.png" class="btn reset" (click)="clearLocalStorage()">
+<img src="../../../assets/avancar2.png" alt="" class="btn next" (click)="fnext()">
+<img src="../../../assets/voltar2.png" alt="" class="btn back" (click)="fprevious()">
+<img src="../../../assets/mais2.png" alt="" class="btn add" (click)="fplus()">
+<img src="../../../assets/menos2.png" alt="" class="btn remove" (click)="fminus()">
 <img src="../../../assets/home.png" alt="" class="btn home" (click)="home()">
 <img src="../../../assets/fav.png" alt="" class="btn fav" (click)="favorite()">

@@ -11,6 +11,7 @@ import { Response } from '../Response';
 export class PokemonService {
   private baseAPI = environment.apiUrl;
   private apiUrl = `${this.baseAPI}pokemon`;
+  private allUrl = `${this.baseAPI}pokemon?limit=1400`;
   private descriptionUrl = `${this.baseAPI}pokemon-species`;
 
   constructor(private http: HttpClient) {}
@@ -19,6 +20,10 @@ export class PokemonService {
     return this.http.get<Response>(
       `${this.apiUrl}?offset=${offset}&limit=${limit}`
     );
+  }
+
+  getAll(): Observable<Response> {
+    return this.http.get<Response>(`${this.allUrl}`);
   }
 
   getDetails(id: string): Observable<any> {

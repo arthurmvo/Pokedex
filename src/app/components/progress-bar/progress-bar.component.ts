@@ -11,12 +11,20 @@ import { stat } from 'fs';
 })
 export class ProgressBarComponent {
   private _stat!: string;
-  @Input() value!: number;
+  private _value!: number;
+
+  @Input()
+  set value(value: number) {
+    this._value = value < 30 ? 30 : value;
+  }
+  get value(): number {
+    return this._value;
+  }
   @Input() max!: number;
 
   @Input()
-  set stat(value: string) {
-    this._stat = value.replace(' ', '-');
+  set stat(name: string) {
+    this._stat = name.replace(' ', '-');
   }
 
   get stat(): string {

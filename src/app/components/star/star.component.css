@@ -1,5 +1,7 @@
 /* Apply CSS to the entire SVG */
-
+.star-svg {
+    cursor: pointer;
+}
   
 /* Apply CSS to the path element inside the SVG */
 .star-svg path {
@@ -9,13 +11,14 @@
     stroke-linejoin: round;
 }
 
-.star-svg path.filled, .star-svg path.unfilled:hover {
+.star-svg path.filled:not(.hovering), .star-svg path.unfilled.hovering  {
     fill: yellow;
+    transition: .4s;
 }
 
-.star-svg path.unfilled, .star-svg path.filled:hover {
+.star-svg path.unfilled:not(.hovering), .star-svg path.filled.hovering {
     fill: none;
+    transition: .4s;
 }
-
 
   

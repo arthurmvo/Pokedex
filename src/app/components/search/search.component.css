@@ -1,0 +1,13 @@
+.search input{
+    width: 95%;
+    height: 3vh;
+    border-radius: 5px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    margin-top: 2vh;
+}

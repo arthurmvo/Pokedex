@@ -1,1 +1,25 @@
-<p>this works!</p>
+<div class="all">
+    <div class="fix">
+        <div class="container">
+            <ng-container *ngTemplateOutlet="empty ? emptyTemplate : list"></ng-container>
+            <ng-template #list>
+                <div class="container-list" #containerList>
+                    <app-square-dex (unfavorited)="unfavoritePokemon($event)" *ngFor="let pokemon of pokemons"
+                        [pokemon]="pokemon"></app-square-dex>
+                </div>
+            </ng-template>
+            <ng-template class="emptyTemplate" #emptyTemplate>
+                <div class="empty">
+                    <h1>Oops!</h1>
+                    <p>Parece que você ainda nao tem nenhum Pokémon favorito ainda!</p>
+                </div>
+            </ng-template>
+        </div>
+    </div>
+    <img src="../../../assets/pokedex2.png" class="fixed">
+</div>
+
+<img src="../../../assets/search2.png" class="btn search-icon" (click)="search()">
+<img src="../../../assets/reset.png" class="btn reset" (click)="clearLocalStorage()">
+<img src="../../../assets/home.png" alt="" class="btn home" (click)="home()">
+<img src="../../../assets/fav.png" alt="" class="btn fav" (click)="favorite()">

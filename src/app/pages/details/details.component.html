@@ -1,15 +1,36 @@
 <div class="all">
     <div class="fix">
-        <button class="back-button">
+        <button class="back-button" (click)="goBack()">
             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
                 <polyline points="35,15 15,25 35,35" stroke-width="4" fill="none" />
             </svg>
         </button>
         <div class="container">
-            <img src="{{pokemon.sprite}}" alt="" class="sprite">
+            <div class="prev">
+                <img src="{{prevPokemon.sprite}}" class="sprite">
+            </div>
+            <div class="atual">
+                <img src="../../../assets/types/{{pokemon.types[0]}}.png" class="typeSprite">
+                <img src="{{pokemon.sprite}}" class="sprite">
+            </div>
+            <div class="nextP">
+                <img src="{{nextPokemon.sprite}}" class="sprite">
+            </div>
         </div>
-
-        <p class="name">{{pokemon.name}}</p>
+        <div class="names">
+            <div>
+                <p class="prev">{{prevPokemon.name | titlecase}}</p>
+            </div>
+            <div class="bar">
+                <p class="name">{{pokemon.name}}</p>
+                <div class="star" [ngStyle]="{'width': '5vh', 'height': '5vh'}">
+                    <app-star [id]="pokemon.id" [name]="pokemon.name"></app-star>
+                </div>
+            </div>
+            <div>
+                <p class="nextP">{{nextPokemon.name | titlecase}}</p>
+            </div>
+        </div>
         <div class="types">
             <a class="type" *ngFor="let type of pokemon.types" [ngClass]='type'>{{type}}</a>
         </div>
@@ -28,9 +49,26 @@
                             <span>{{stat.value}}</span>
                             <app-progress-bar [value]="stat.value" [max]="155" [stat]="stat.name"></app-progress-bar>
                         </div>
-
                     </li>
                 </ul>
+            </div>
+            <div class="rectangle">
+                <h2>Habilidades</h2>
+                <div class="abilities">
+                    <a class="ability" *ngFor="let ability of pokemon.abilities">{{ability}}</a>
+                </div>
+                <h2>Informações</h2>
+                <div class="infos">
+                    <span><a>Altura:</a><br> {{pokemon.height}}cm</span>
+                    <span><a>Peso:</a><br> {{pokemon.weight}}kg</span>
+                </div>
+                <h2>Som:</h2>
+                <div class="sound">
+                    <audio controls #Audio>
+                        <source [src]="pokemon.cry" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
             </div>
         </div>
 
@@ -38,7 +76,9 @@
     <img src="../../../assets/pokedex2.png" class="fixed">
 </div>
 
-<img src="../../../assets/avancar.png" alt="" class="btn next" (click)="fnext()">
-<img src="../../../assets/voltar.png" alt="" class="btn back" (click)="fprevious()">
+<img src="../../../assets/search2.png" class="btn search-icon" (click)="search()">
+<img src="../../../assets/reset.png" class="btn reset" (click)="clearLocalStorage()">
+<img src="../../../assets/avancar2.png" alt="" class="btn next" (click)="fnext()">
+<img src="../../../assets/voltar2.png" alt="" class="btn back" (click)="fprevious()">
 <img src="../../../assets/home.png" alt="" class="btn home" (click)="home()">
 <img src="../../../assets/fav.png" alt="" class="btn fav" (click)="favorite()">

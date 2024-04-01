@@ -28,6 +28,7 @@ export class HomeListComponent implements AfterViewInit {
   @Input() previous: EventEmitter<any> = new EventEmitter();
   @Input() plus: EventEmitter<any> = new EventEmitter();
   @Input() minus: EventEmitter<any> = new EventEmitter();
+  @Input() refresh: EventEmitter<any> = new EventEmitter();
 
   pokemons: Pokemon[] = [];
   aux_pokemons: Pokemon[] = [];
@@ -64,6 +65,10 @@ export class HomeListComponent implements AfterViewInit {
       }
       this.reloadData();
     });
+
+    this.refresh.subscribe(() => {
+      this.reloadData();
+    });
   }
 
   ngAfterViewInit() {
@@ -71,19 +76,18 @@ export class HomeListComponent implements AfterViewInit {
   }
 
   loadPokemons() {
-    console.log('loadPokemons', this.limit);
     this.pokemonService
       .getPokemons(this.offset, this.limit)
       .subscribe((response) => {
         const data = response.results;
         for (const item of data) {
           const id = item.url.split('/')[6];
-          // const details = this.pokemonService.getDetails(item.url).subscribe();
           const pokemon: Pokemon = {
             id: id,
             name: item.name,
             url: item.url,
             sprite: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`,
+            types: [],
           };
           this.aux_pokemons.push(pokemon);
         }

@@ -1,4 +1,11 @@
-import { Component, Input } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  HostListener,
+  Input,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
 import { FavoriteService } from '../../services/favorite.service';
 import { CommonModule } from '@angular/common';
 
@@ -11,24 +18,49 @@ import { CommonModule } from '@angular/common';
 })
 export class StarComponent {
   @Input() id!: number;
+  @Input() name!: string;
+  @Output() unfavorited = new EventEmitter<void>();
 
-  isFavorite!: string;
+  isFilled!: boolean;
+  isHovered!: boolean;
 
   constructor(private favoriteService: FavoriteService) {}
 
   ngOnInit() {
-    this.isFavorite = this.favoriteService.isFavorite(this.id)
-      ? 'filled'
-      : 'unfilled';
+    this.updateRender();
+    console.log('---');
+    this.favoriteService.eventObservable.subscribe(() => {
+      this.updateRender();
+    });
   }
 
   toggleFavorite() {
     if (this.favoriteService.isFavorite(this.id)) {
       this.favoriteService.removeFavorite(this.id);
-      this.isFavorite = 'unfilled';
+      this.isFilled = false;
+      this.unfavorited.emit();
     } else {
-      this.favoriteService.addFavorite(this.id);
-      this.isFavorite = 'filled';
+      this.favoriteService.addFavorite(this.id, this.name);
+      this.isFilled = true;
+    }
+  }
+
+  updateRender() {
+    console.log('entrou');
+    this.isFilled = this.favoriteService.isFavorite(this.id);
+  }
+
+  @HostListener('mouseenter') onMouseEnter() {
+    this.isHovered = true;
+  }
+
+  @HostListener('mouseleave') onMouseLeave() {
+    this.isHovered = false;
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['id']) {
+      this.isFilled = this.favoriteService.isFavorite(this.id);
     }
   }
 }

@@ -1,5 +1,5 @@
 <!-- In the component's template -->
 <svg class="star-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" (click)="toggleFavorite()">
-    <path [ngClass]="isFavorite"
+    <path [ngClass]="{'filled': isFilled, 'unfilled': !isFilled, 'hovering': isHovered}"
         d="M12 1L14.7561 8.66186L23.5122 9.34521L16.7561 15.6619L18.5122 23L12 19.6619L5.48776 23L7.2439 15.6619L0.487763 9.34521L9.2439 8.66186L12 1Z" />
 </svg>
