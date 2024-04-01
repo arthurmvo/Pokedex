@@ -72,7 +72,8 @@
               "host": "0.0.0.0"
             },
             "development": {
-              "buildTarget": "Pokedex:build:development"
+              "buildTarget": "Pokedex:build:development",
+              "host": "0.0.0.0"
             }
           },
           "defaultConfiguration": "development"
